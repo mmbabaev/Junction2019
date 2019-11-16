@@ -59,14 +59,17 @@ public final class SceneLocationManager {
     }
 
     public var currentLocation: CLLocation? {
-//        if locationEstimateMethod == .coreLocationDataOnly { return locationManager.currentLocation }
-
+//        if locationEstimateMethod == .coreLocationDataOnly {
+//            return locationManager.currentLocation
+//        }
+//
 //        guard let bestEstimate = bestLocationEstimate,
 //            let position = sceneLocationDelegate?.scenePosition else { return nil }
-//            print("position: \(bestEstimate.translatedLocation(to: position))")
+//
 //        return bestEstimate.translatedLocation(to: position)
-        let coordinate = CLLocationCoordinate2D(latitude: 60.185469, longitude: 24.824695)
-        return CLLocation(coordinate: coordinate, altitude: 14.512657821178436, horizontalAccuracy: 1, verticalAccuracy: 1, timestamp: Date())
+        
+        let coordinate = CLLocationCoordinate2D(latitude: 60.18540280719356, longitude: 24.824812153914856)
+        return CLLocation(coordinate: coordinate, altitude: 50, horizontalAccuracy: 1, verticalAccuracy: 1, timestamp: Date())
     }
 
     init() {
@@ -79,10 +82,10 @@ public final class SceneLocationManager {
 
     @objc
     func updateLocationData() {
-//        removeOldLocationEstimates()
-//
-//        sceneLocationDelegate?.confirmLocationOfDistantLocationNodes()
-//        sceneLocationDelegate?.updatePositionAndScaleOfLocationNodes()
+        removeOldLocationEstimates()
+
+        sceneLocationDelegate?.confirmLocationOfDistantLocationNodes()
+        sceneLocationDelegate?.updatePositionAndScaleOfLocationNodes()
     }
 
     ///Adds a scene location estimate based on current time, camera position and location from location manager

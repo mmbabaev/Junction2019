@@ -32,7 +32,6 @@
 		E1060851238048130032F922 /* SceneLocationViewEstimateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106083E238048130032F922 /* SceneLocationViewEstimateDelegate.swift */; };
 		E10608572380489A0032F922 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E10608562380489A0032F922 /* Main.storyboard */; };
 		E1060861238048E30032F922 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1060859238048E20032F922 /* Utils.swift */; };
-		E1060862238048E30032F922 /* POIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106085A238048E20032F922 /* POIViewController.swift */; };
 		E1060864238048E30032F922 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106085C238048E20032F922 /* SettingsViewController.swift */; };
 		E1060865238048E30032F922 /* UIButton+Designable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106085D238048E20032F922 /* UIButton+Designable.swift */; };
 		E1060866238048E30032F922 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106085E238048E20032F922 /* LocationCell.swift */; };
@@ -40,6 +39,7 @@
 		E1060868238048E30032F922 /* OpenARCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1060860238048E30032F922 /* OpenARCell.swift */; };
 		E106086A238049440032F922 /* POIViewController+ARSCNViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1060869238049440032F922 /* POIViewController+ARSCNViewDelegate.swift */; };
 		E106086C238049CD0032F922 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E106086B238049CD0032F922 /* Assets.xcassets */; };
+		E1743A6B23804AAE00192091 /* POIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1743A6A23804AAE00192091 /* POIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,7 +70,6 @@
 		E106083E238048130032F922 /* SceneLocationViewEstimateDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneLocationViewEstimateDelegate.swift; sourceTree = "<group>"; };
 		E10608562380489A0032F922 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E1060859238048E20032F922 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		E106085A238048E20032F922 /* POIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = POIViewController.swift; path = "../../Junction2019/ARKit+CoreLocation/POIViewController.swift"; sourceTree = "<group>"; };
 		E106085C238048E20032F922 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E106085D238048E20032F922 /* UIButton+Designable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Designable.swift"; sourceTree = "<group>"; };
 		E106085E238048E20032F922 /* LocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
@@ -78,6 +77,7 @@
 		E1060860238048E30032F922 /* OpenARCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenARCell.swift; sourceTree = "<group>"; };
 		E1060869238049440032F922 /* POIViewController+ARSCNViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "POIViewController+ARSCNViewDelegate.swift"; sourceTree = "<group>"; };
 		E106086B238049CD0032F922 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E1743A6A23804AAE00192091 /* POIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POIViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,15 +110,15 @@
 		E10607F3238047BE0032F922 /* FutureFlow */ = {
 			isa = PBXGroup;
 			children = (
+				E1060827238048120032F922 /* ARKit-CoreLocation */,
 				E106085E238048E20032F922 /* LocationCell.swift */,
 				E106085F238048E30032F922 /* NotSupportedViewController.swift */,
 				E1060860238048E30032F922 /* OpenARCell.swift */,
-				E106085A238048E20032F922 /* POIViewController.swift */,
+				E1743A6A23804AAE00192091 /* POIViewController.swift */,
 				E1060869238049440032F922 /* POIViewController+ARSCNViewDelegate.swift */,
 				E106085C238048E20032F922 /* SettingsViewController.swift */,
 				E106085D238048E20032F922 /* UIButton+Designable.swift */,
 				E1060859238048E20032F922 /* Utils.swift */,
-				E1060827238048120032F922 /* ARKit-CoreLocation */,
 				E10608562380489A0032F922 /* Main.storyboard */,
 				E106086B238049CD0032F922 /* Assets.xcassets */,
 				E10607F4238047BE0032F922 /* AppDelegate.swift */,
@@ -264,6 +264,7 @@
 				E106084D238048130032F922 /* CLLocation+Extensions.swift in Sources */,
 				E1060868238048E30032F922 /* OpenARCell.swift in Sources */,
 				E1060850238048130032F922 /* SceneLocationView.swift in Sources */,
+				E1743A6B23804AAE00192091 /* POIViewController.swift in Sources */,
 				E1060865238048E30032F922 /* UIButton+Designable.swift in Sources */,
 				E1060841238048130032F922 /* LocationNode.swift in Sources */,
 				E1060845238048130032F922 /* SceneLocationEstimate.swift in Sources */,
@@ -277,7 +278,6 @@
 				E1060844238048130032F922 /* SceneLocationView+ARSCNViewDelegate.swift in Sources */,
 				E1060846238048130032F922 /* SceneLocationEstimate+Extensions.swift in Sources */,
 				E10607F5238047BE0032F922 /* AppDelegate.swift in Sources */,
-				E1060862238048E30032F922 /* POIViewController.swift in Sources */,
 				E106084C238048130032F922 /* CGPoint+Extensions.swift in Sources */,
 				E106084A238048130032F922 /* FloatingPoint+Radians.swift in Sources */,
 				E1060866238048E30032F922 /* LocationCell.swift in Sources */,

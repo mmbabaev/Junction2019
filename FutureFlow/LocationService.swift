@@ -12,7 +12,7 @@ final class LocationService {
     
     static let shared = LocationService()
     
-    let baseURL = ""
+    let baseURL = "https://api.fmeter.ru/site/api/1234563213131231231123341112"
     let decoder = JSONDecoder()
     
     var locations: [Location] = []
@@ -20,7 +20,7 @@ final class LocationService {
     private init() {}
     
     func updateLocations(_ callback: @escaping ([Location]?) -> Void) {
-        let urlString = ""
+        let urlString = baseURL + ""
         guard let url = URL(string: urlString) else {
             callback(nil)
             return

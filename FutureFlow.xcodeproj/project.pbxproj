@@ -1,0 +1,491 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E10607F5238047BE0032F922 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10607F4238047BE0032F922 /* AppDelegate.swift */; };
+		E10607F9238047BE0032F922 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10607F8238047BE0032F922 /* ViewController.swift */; };
+		E10607FC238047BE0032F922 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E10607FA238047BE0032F922 /* Main.storyboard */; };
+		E1060801238047BE0032F922 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E10607FF238047BE0032F922 /* LaunchScreen.storyboard */; };
+		E106083F238048130032F922 /* AttributedType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1060829238048120032F922 /* AttributedType.swift */; };
+		E1060840238048130032F922 /* ScalingScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106082B238048120032F922 /* ScalingScheme.swift */; };
+		E1060841238048130032F922 /* LocationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106082C238048120032F922 /* LocationNode.swift */; };
+		E1060842238048130032F922 /* PolylineNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106082D238048120032F922 /* PolylineNode.swift */; };
+		E1060843238048130032F922 /* LocationAnnotationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106082E238048130032F922 /* LocationAnnotationNode.swift */; };
+		E1060844238048130032F922 /* SceneLocationView+ARSCNViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106082F238048130032F922 /* SceneLocationView+ARSCNViewDelegate.swift */; };
+		E1060845238048130032F922 /* SceneLocationEstimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1060831238048130032F922 /* SceneLocationEstimate.swift */; };
+		E1060846238048130032F922 /* SceneLocationEstimate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1060832238048130032F922 /* SceneLocationEstimate+Extensions.swift */; };
+		E1060847238048130032F922 /* SceneLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1060833238048130032F922 /* SceneLocationManager.swift */; };
+		E1060848238048130032F922 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1060834238048130032F922 /* LocationManager.swift */; };
+		E1060849238048130032F922 /* SCNVector3+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1060836238048130032F922 /* SCNVector3+Extensions.swift */; };
+		E106084A238048130032F922 /* FloatingPoint+Radians.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1060837238048130032F922 /* FloatingPoint+Radians.swift */; };
+		E106084B238048130032F922 /* BaseTypes+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1060838238048130032F922 /* BaseTypes+Extensions.swift */; };
+		E106084C238048130032F922 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1060839238048130032F922 /* CGPoint+Extensions.swift */; };
+		E106084D238048130032F922 /* CLLocation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106083A238048130032F922 /* CLLocation+Extensions.swift */; };
+		E106084E238048130032F922 /* SCNNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106083B238048130032F922 /* SCNNode+Extensions.swift */; };
+		E106084F238048130032F922 /* ARKit_CoreLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106083C238048130032F922 /* ARKit_CoreLocation.swift */; };
+		E1060850238048130032F922 /* SceneLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106083D238048130032F922 /* SceneLocationView.swift */; };
+		E1060851238048130032F922 /* SceneLocationViewEstimateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106083E238048130032F922 /* SceneLocationViewEstimateDelegate.swift */; };
+		E10608572380489A0032F922 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E10608562380489A0032F922 /* Main.storyboard */; };
+		E1060861238048E30032F922 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1060859238048E20032F922 /* Utils.swift */; };
+		E1060862238048E30032F922 /* POIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106085A238048E20032F922 /* POIViewController.swift */; };
+		E1060864238048E30032F922 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106085C238048E20032F922 /* SettingsViewController.swift */; };
+		E1060865238048E30032F922 /* UIButton+Designable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106085D238048E20032F922 /* UIButton+Designable.swift */; };
+		E1060866238048E30032F922 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106085E238048E20032F922 /* LocationCell.swift */; };
+		E1060867238048E30032F922 /* NotSupportedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106085F238048E30032F922 /* NotSupportedViewController.swift */; };
+		E1060868238048E30032F922 /* OpenARCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1060860238048E30032F922 /* OpenARCell.swift */; };
+		E106086A238049440032F922 /* POIViewController+ARSCNViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1060869238049440032F922 /* POIViewController+ARSCNViewDelegate.swift */; };
+		E106086C238049CD0032F922 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E106086B238049CD0032F922 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E10607F1238047BE0032F922 /* FutureFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FutureFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E10607F4238047BE0032F922 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E10607F8238047BE0032F922 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E10607FB238047BE0032F922 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E1060800238047BE0032F922 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E1060802238047BE0032F922 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1060829238048120032F922 /* AttributedType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedType.swift; sourceTree = "<group>"; };
+		E106082B238048120032F922 /* ScalingScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScalingScheme.swift; sourceTree = "<group>"; };
+		E106082C238048120032F922 /* LocationNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationNode.swift; sourceTree = "<group>"; };
+		E106082D238048120032F922 /* PolylineNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolylineNode.swift; sourceTree = "<group>"; };
+		E106082E238048130032F922 /* LocationAnnotationNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationAnnotationNode.swift; sourceTree = "<group>"; };
+		E106082F238048130032F922 /* SceneLocationView+ARSCNViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SceneLocationView+ARSCNViewDelegate.swift"; sourceTree = "<group>"; };
+		E1060831238048130032F922 /* SceneLocationEstimate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneLocationEstimate.swift; sourceTree = "<group>"; };
+		E1060832238048130032F922 /* SceneLocationEstimate+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SceneLocationEstimate+Extensions.swift"; sourceTree = "<group>"; };
+		E1060833238048130032F922 /* SceneLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneLocationManager.swift; sourceTree = "<group>"; };
+		E1060834238048130032F922 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		E1060836238048130032F922 /* SCNVector3+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNVector3+Extensions.swift"; sourceTree = "<group>"; };
+		E1060837238048130032F922 /* FloatingPoint+Radians.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FloatingPoint+Radians.swift"; sourceTree = "<group>"; };
+		E1060838238048130032F922 /* BaseTypes+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseTypes+Extensions.swift"; sourceTree = "<group>"; };
+		E1060839238048130032F922 /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
+		E106083A238048130032F922 /* CLLocation+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocation+Extensions.swift"; sourceTree = "<group>"; };
+		E106083B238048130032F922 /* SCNNode+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNNode+Extensions.swift"; sourceTree = "<group>"; };
+		E106083C238048130032F922 /* ARKit_CoreLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARKit_CoreLocation.swift; sourceTree = "<group>"; };
+		E106083D238048130032F922 /* SceneLocationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneLocationView.swift; sourceTree = "<group>"; };
+		E106083E238048130032F922 /* SceneLocationViewEstimateDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneLocationViewEstimateDelegate.swift; sourceTree = "<group>"; };
+		E10608562380489A0032F922 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		E1060859238048E20032F922 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		E106085A238048E20032F922 /* POIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = POIViewController.swift; path = "../../Junction2019/ARKit+CoreLocation/POIViewController.swift"; sourceTree = "<group>"; };
+		E106085C238048E20032F922 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		E106085D238048E20032F922 /* UIButton+Designable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Designable.swift"; sourceTree = "<group>"; };
+		E106085E238048E20032F922 /* LocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
+		E106085F238048E30032F922 /* NotSupportedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotSupportedViewController.swift; sourceTree = "<group>"; };
+		E1060860238048E30032F922 /* OpenARCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenARCell.swift; sourceTree = "<group>"; };
+		E1060869238049440032F922 /* POIViewController+ARSCNViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "POIViewController+ARSCNViewDelegate.swift"; sourceTree = "<group>"; };
+		E106086B238049CD0032F922 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E10607EE238047BE0032F922 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E10607E8238047BD0032F922 = {
+			isa = PBXGroup;
+			children = (
+				E10607F3238047BE0032F922 /* FutureFlow */,
+				E10607F2238047BE0032F922 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E10607F2238047BE0032F922 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E10607F1238047BE0032F922 /* FutureFlow.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E10607F3238047BE0032F922 /* FutureFlow */ = {
+			isa = PBXGroup;
+			children = (
+				E106085E238048E20032F922 /* LocationCell.swift */,
+				E106085F238048E30032F922 /* NotSupportedViewController.swift */,
+				E1060860238048E30032F922 /* OpenARCell.swift */,
+				E106085A238048E20032F922 /* POIViewController.swift */,
+				E1060869238049440032F922 /* POIViewController+ARSCNViewDelegate.swift */,
+				E106085C238048E20032F922 /* SettingsViewController.swift */,
+				E106085D238048E20032F922 /* UIButton+Designable.swift */,
+				E1060859238048E20032F922 /* Utils.swift */,
+				E1060827238048120032F922 /* ARKit-CoreLocation */,
+				E10608562380489A0032F922 /* Main.storyboard */,
+				E106086B238049CD0032F922 /* Assets.xcassets */,
+				E10607F4238047BE0032F922 /* AppDelegate.swift */,
+				E10607F8238047BE0032F922 /* ViewController.swift */,
+				E10607FA238047BE0032F922 /* Main.storyboard */,
+				E10607FF238047BE0032F922 /* LaunchScreen.storyboard */,
+				E1060802238047BE0032F922 /* Info.plist */,
+			);
+			path = FutureFlow;
+			sourceTree = "<group>";
+		};
+		E1060827238048120032F922 /* ARKit-CoreLocation */ = {
+			isa = PBXGroup;
+			children = (
+				E1060828238048120032F922 /* Util */,
+				E106082A238048120032F922 /* Nodes */,
+				E106082F238048130032F922 /* SceneLocationView+ARSCNViewDelegate.swift */,
+				E1060830238048130032F922 /* Location Manager */,
+				E1060835238048130032F922 /* Extensions */,
+				E106083C238048130032F922 /* ARKit_CoreLocation.swift */,
+				E106083D238048130032F922 /* SceneLocationView.swift */,
+				E106083E238048130032F922 /* SceneLocationViewEstimateDelegate.swift */,
+			);
+			path = "ARKit-CoreLocation";
+			sourceTree = "<group>";
+		};
+		E1060828238048120032F922 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				E1060829238048120032F922 /* AttributedType.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		E106082A238048120032F922 /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				E106082B238048120032F922 /* ScalingScheme.swift */,
+				E106082C238048120032F922 /* LocationNode.swift */,
+				E106082D238048120032F922 /* PolylineNode.swift */,
+				E106082E238048130032F922 /* LocationAnnotationNode.swift */,
+			);
+			path = Nodes;
+			sourceTree = "<group>";
+		};
+		E1060830238048130032F922 /* Location Manager */ = {
+			isa = PBXGroup;
+			children = (
+				E1060831238048130032F922 /* SceneLocationEstimate.swift */,
+				E1060832238048130032F922 /* SceneLocationEstimate+Extensions.swift */,
+				E1060833238048130032F922 /* SceneLocationManager.swift */,
+				E1060834238048130032F922 /* LocationManager.swift */,
+			);
+			path = "Location Manager";
+			sourceTree = "<group>";
+		};
+		E1060835238048130032F922 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E1060836238048130032F922 /* SCNVector3+Extensions.swift */,
+				E1060837238048130032F922 /* FloatingPoint+Radians.swift */,
+				E1060838238048130032F922 /* BaseTypes+Extensions.swift */,
+				E1060839238048130032F922 /* CGPoint+Extensions.swift */,
+				E106083A238048130032F922 /* CLLocation+Extensions.swift */,
+				E106083B238048130032F922 /* SCNNode+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E10607F0238047BE0032F922 /* FutureFlow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1060805238047BE0032F922 /* Build configuration list for PBXNativeTarget "FutureFlow" */;
+			buildPhases = (
+				E10607ED238047BE0032F922 /* Sources */,
+				E10607EE238047BE0032F922 /* Frameworks */,
+				E10607EF238047BE0032F922 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FutureFlow;
+			productName = FutureFlow;
+			productReference = E10607F1238047BE0032F922 /* FutureFlow.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E10607E9238047BD0032F922 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = Mihail;
+				TargetAttributes = {
+					E10607F0238047BE0032F922 = {
+						CreatedOnToolsVersion = 11.2;
+					};
+				};
+			};
+			buildConfigurationList = E10607EC238047BD0032F922 /* Build configuration list for PBXProject "FutureFlow" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E10607E8238047BD0032F922;
+			productRefGroup = E10607F2238047BE0032F922 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E10607F0238047BE0032F922 /* FutureFlow */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E10607EF238047BE0032F922 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E10608572380489A0032F922 /* Main.storyboard in Resources */,
+				E1060801238047BE0032F922 /* LaunchScreen.storyboard in Resources */,
+				E106086C238049CD0032F922 /* Assets.xcassets in Resources */,
+				E10607FC238047BE0032F922 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E10607ED238047BE0032F922 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E106084B238048130032F922 /* BaseTypes+Extensions.swift in Sources */,
+				E106084D238048130032F922 /* CLLocation+Extensions.swift in Sources */,
+				E1060868238048E30032F922 /* OpenARCell.swift in Sources */,
+				E1060850238048130032F922 /* SceneLocationView.swift in Sources */,
+				E1060865238048E30032F922 /* UIButton+Designable.swift in Sources */,
+				E1060841238048130032F922 /* LocationNode.swift in Sources */,
+				E1060845238048130032F922 /* SceneLocationEstimate.swift in Sources */,
+				E1060851238048130032F922 /* SceneLocationViewEstimateDelegate.swift in Sources */,
+				E1060867238048E30032F922 /* NotSupportedViewController.swift in Sources */,
+				E1060843238048130032F922 /* LocationAnnotationNode.swift in Sources */,
+				E1060847238048130032F922 /* SceneLocationManager.swift in Sources */,
+				E10607F9238047BE0032F922 /* ViewController.swift in Sources */,
+				E106083F238048130032F922 /* AttributedType.swift in Sources */,
+				E1060840238048130032F922 /* ScalingScheme.swift in Sources */,
+				E1060844238048130032F922 /* SceneLocationView+ARSCNViewDelegate.swift in Sources */,
+				E1060846238048130032F922 /* SceneLocationEstimate+Extensions.swift in Sources */,
+				E10607F5238047BE0032F922 /* AppDelegate.swift in Sources */,
+				E1060862238048E30032F922 /* POIViewController.swift in Sources */,
+				E106084C238048130032F922 /* CGPoint+Extensions.swift in Sources */,
+				E106084A238048130032F922 /* FloatingPoint+Radians.swift in Sources */,
+				E1060866238048E30032F922 /* LocationCell.swift in Sources */,
+				E1060842238048130032F922 /* PolylineNode.swift in Sources */,
+				E1060848238048130032F922 /* LocationManager.swift in Sources */,
+				E1060849238048130032F922 /* SCNVector3+Extensions.swift in Sources */,
+				E106086A238049440032F922 /* POIViewController+ARSCNViewDelegate.swift in Sources */,
+				E106084E238048130032F922 /* SCNNode+Extensions.swift in Sources */,
+				E106084F238048130032F922 /* ARKit_CoreLocation.swift in Sources */,
+				E1060861238048E30032F922 /* Utils.swift in Sources */,
+				E1060864238048E30032F922 /* SettingsViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E10607FA238047BE0032F922 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E10607FB238047BE0032F922 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E10607FF238047BE0032F922 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E1060800238047BE0032F922 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E1060803238047BE0032F922 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E1060804238047BE0032F922 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E1060806238047BE0032F922 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TLWW27T23K;
+				INFOPLIST_FILE = FutureFlow/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.maaap.ProjectDent.ARKit-CoreLocation-mbabaev";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E1060807238047BE0032F922 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TLWW27T23K;
+				INFOPLIST_FILE = FutureFlow/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.maaap.ProjectDent.ARKit-CoreLocation-mbabaev";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E10607EC238047BD0032F922 /* Build configuration list for PBXProject "FutureFlow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1060803238047BE0032F922 /* Debug */,
+				E1060804238047BE0032F922 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E1060805238047BE0032F922 /* Build configuration list for PBXNativeTarget "FutureFlow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1060806238047BE0032F922 /* Debug */,
+				E1060807238047BE0032F922 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E10607E9238047BD0032F922 /* Project object */;
+}

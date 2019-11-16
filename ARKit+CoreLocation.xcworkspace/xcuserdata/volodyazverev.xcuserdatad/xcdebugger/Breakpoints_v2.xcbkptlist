@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "3181D7D0-F5C0-4A92-A9C7-4A938754C1B1"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1A83DD85-8B5D-4B22-9F7C-D93BFCA3CE1F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sources/ARKit-CoreLocation/Extensions/CLLocation+Extensions.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "translatedLocation(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6D094261-CB48-46EF-87F6-18666CFBF36F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ARKit+CoreLocation/POIViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "232"
+            endingLineNumber = "232"
+            landmarkName = "addSceneModels()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6D094261-CB48-46EF-87F6-18666CFBF36F - 9ce43f7554999517"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ARKit_CoreLocation.POIViewController.addSceneModels() -&gt; ()"
+                  moduleName = "ARKit+CoreLocation"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/volodyazverev/Downloads/ARKit-CoreLocation-develop/ARKit+CoreLocation/POIViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "232"
+                  endingLineNumber = "232"
+                  offsetFromSymbolStart = "1256">
+               </Location>
+               <Location
+                  uuid = "6D094261-CB48-46EF-87F6-18666CFBF36F - 4fe465cc2e3e0ead"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (ARCL.LocationAnnotationNode) -&gt; () in ARKit_CoreLocation.POIViewController.addSceneModels() -&gt; ()"
+                  moduleName = "ARKit+CoreLocation"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/volodyazverev/Downloads/ARKit-CoreLocation-develop/ARKit+CoreLocation/POIViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "232"
+                  endingLineNumber = "232"
+                  offsetFromSymbolStart = "132">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

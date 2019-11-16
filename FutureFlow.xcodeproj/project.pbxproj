@@ -35,14 +35,12 @@
 		E1060861238048E30032F922 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1060859238048E20032F922 /* Utils.swift */; };
 		E1060864238048E30032F922 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106085C238048E20032F922 /* SettingsViewController.swift */; };
 		E1060865238048E30032F922 /* UIButton+Designable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106085D238048E20032F922 /* UIButton+Designable.swift */; };
-		E1060866238048E30032F922 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106085E238048E20032F922 /* LocationCell.swift */; };
-		E1060867238048E30032F922 /* NotSupportedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106085F238048E30032F922 /* NotSupportedViewController.swift */; };
-		E1060868238048E30032F922 /* OpenARCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1060860238048E30032F922 /* OpenARCell.swift */; };
 		E106086A238049440032F922 /* POIViewController+ARSCNViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1060869238049440032F922 /* POIViewController+ARSCNViewDelegate.swift */; };
 		E106086C238049CD0032F922 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E106086B238049CD0032F922 /* Assets.xcassets */; };
 		E1743A6B23804AAE00192091 /* POIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1743A6A23804AAE00192091 /* POIViewController.swift */; };
 		E1743A6F23804D1F00192091 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1743A6E23804D1F00192091 /* LocationService.swift */; };
 		E1743A7123804D3600192091 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1743A7023804D3600192091 /* Location.swift */; };
+		E18FD79823808A2A004E9F0F /* NotSupportedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18FD79723808A2A004E9F0F /* NotSupportedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,14 +75,12 @@
 		E1060859238048E20032F922 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		E106085C238048E20032F922 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E106085D238048E20032F922 /* UIButton+Designable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Designable.swift"; sourceTree = "<group>"; };
-		E106085E238048E20032F922 /* LocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
-		E106085F238048E30032F922 /* NotSupportedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotSupportedViewController.swift; sourceTree = "<group>"; };
-		E1060860238048E30032F922 /* OpenARCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenARCell.swift; sourceTree = "<group>"; };
 		E1060869238049440032F922 /* POIViewController+ARSCNViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "POIViewController+ARSCNViewDelegate.swift"; sourceTree = "<group>"; };
 		E106086B238049CD0032F922 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1743A6A23804AAE00192091 /* POIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POIViewController.swift; sourceTree = "<group>"; };
 		E1743A6E23804D1F00192091 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		E1743A7023804D3600192091 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		E18FD79723808A2A004E9F0F /* NotSupportedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotSupportedViewController.swift; sourceTree = "<group>"; };
 		EE8F0FAD0EAC648BB5C581F5 /* Pods-FutureFlow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FutureFlow.release.xcconfig"; path = "Target Support Files/Pods-FutureFlow/Pods-FutureFlow.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -140,6 +136,7 @@
 			children = (
 				E1743A6C23804CEF00192091 /* Other */,
 				E1060827238048120032F922 /* ARKit-CoreLocation */,
+				E106085C238048E20032F922 /* SettingsViewController.swift */,
 				E1743A6A23804AAE00192091 /* POIViewController.swift */,
 				E10608562380489A0032F922 /* Main.storyboard */,
 				E106086B238049CD0032F922 /* Assets.xcassets */,
@@ -215,11 +212,8 @@
 		E1743A6C23804CEF00192091 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				E106085E238048E20032F922 /* LocationCell.swift */,
-				E106085F238048E30032F922 /* NotSupportedViewController.swift */,
-				E1060860238048E30032F922 /* OpenARCell.swift */,
+				E18FD79723808A2A004E9F0F /* NotSupportedViewController.swift */,
 				E1060869238049440032F922 /* POIViewController+ARSCNViewDelegate.swift */,
-				E106085C238048E20032F922 /* SettingsViewController.swift */,
 				E106085D238048E20032F922 /* UIButton+Designable.swift */,
 				E1060859238048E20032F922 /* Utils.swift */,
 			);
@@ -344,14 +338,13 @@
 			files = (
 				E106084B238048130032F922 /* BaseTypes+Extensions.swift in Sources */,
 				E106084D238048130032F922 /* CLLocation+Extensions.swift in Sources */,
-				E1060868238048E30032F922 /* OpenARCell.swift in Sources */,
 				E1060850238048130032F922 /* SceneLocationView.swift in Sources */,
 				E1743A6B23804AAE00192091 /* POIViewController.swift in Sources */,
 				E1060865238048E30032F922 /* UIButton+Designable.swift in Sources */,
 				E1060841238048130032F922 /* LocationNode.swift in Sources */,
 				E1060845238048130032F922 /* SceneLocationEstimate.swift in Sources */,
+				E18FD79823808A2A004E9F0F /* NotSupportedViewController.swift in Sources */,
 				E1060851238048130032F922 /* SceneLocationViewEstimateDelegate.swift in Sources */,
-				E1060867238048E30032F922 /* NotSupportedViewController.swift in Sources */,
 				E1060843238048130032F922 /* LocationAnnotationNode.swift in Sources */,
 				E1060847238048130032F922 /* SceneLocationManager.swift in Sources */,
 				E10607F9238047BE0032F922 /* ViewController.swift in Sources */,
@@ -362,7 +355,6 @@
 				E10607F5238047BE0032F922 /* AppDelegate.swift in Sources */,
 				E106084C238048130032F922 /* CGPoint+Extensions.swift in Sources */,
 				E106084A238048130032F922 /* FloatingPoint+Radians.swift in Sources */,
-				E1060866238048E30032F922 /* LocationCell.swift in Sources */,
 				E1060842238048130032F922 /* PolylineNode.swift in Sources */,
 				E1743A6F23804D1F00192091 /* LocationService.swift in Sources */,
 				E1060848238048130032F922 /* LocationManager.swift in Sources */,

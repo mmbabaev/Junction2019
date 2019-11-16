@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		5317B049060E26A0736C2955 /* Pods_FutureFlow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1366BD0048610B1F504F94B9 /* Pods_FutureFlow.framework */; };
 		E10607F5238047BE0032F922 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10607F4238047BE0032F922 /* AppDelegate.swift */; };
-		E10607F9238047BE0032F922 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10607F8238047BE0032F922 /* ViewController.swift */; };
-		E10607FC238047BE0032F922 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E10607FA238047BE0032F922 /* Main.storyboard */; };
 		E1060801238047BE0032F922 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E10607FF238047BE0032F922 /* LaunchScreen.storyboard */; };
 		E106083F238048130032F922 /* AttributedType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1060829238048120032F922 /* AttributedType.swift */; };
 		E1060840238048130032F922 /* ScalingScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106082B238048120032F922 /* ScalingScheme.swift */; };
@@ -48,8 +46,6 @@
 		B56905540D6379FA0944F60C /* Pods-FutureFlow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FutureFlow.debug.xcconfig"; path = "Target Support Files/Pods-FutureFlow/Pods-FutureFlow.debug.xcconfig"; sourceTree = "<group>"; };
 		E10607F1238047BE0032F922 /* FutureFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FutureFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E10607F4238047BE0032F922 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E10607F8238047BE0032F922 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E10607FB238047BE0032F922 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E1060800238047BE0032F922 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1060802238047BE0032F922 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1060829238048120032F922 /* AttributedType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedType.swift; sourceTree = "<group>"; };
@@ -138,14 +134,12 @@
 				E1060827238048120032F922 /* ARKit-CoreLocation */,
 				E106085C238048E20032F922 /* SettingsViewController.swift */,
 				E1743A6A23804AAE00192091 /* POIViewController.swift */,
-				E10608562380489A0032F922 /* Main.storyboard */,
-				E106086B238049CD0032F922 /* Assets.xcassets */,
-				E10607F8238047BE0032F922 /* ViewController.swift */,
-				E10607FA238047BE0032F922 /* Main.storyboard */,
 				E1743A6E23804D1F00192091 /* LocationService.swift */,
 				E1743A7023804D3600192091 /* Location.swift */,
 				E10607F4238047BE0032F922 /* AppDelegate.swift */,
+				E10608562380489A0032F922 /* Main.storyboard */,
 				E10607FF238047BE0032F922 /* LaunchScreen.storyboard */,
+				E106086B238049CD0032F922 /* Assets.xcassets */,
 				E1060802238047BE0032F922 /* Info.plist */,
 			);
 			path = FutureFlow;
@@ -283,7 +277,6 @@
 				E10608572380489A0032F922 /* Main.storyboard in Resources */,
 				E1060801238047BE0032F922 /* LaunchScreen.storyboard in Resources */,
 				E106086C238049CD0032F922 /* Assets.xcassets in Resources */,
-				E10607FC238047BE0032F922 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +340,6 @@
 				E1060851238048130032F922 /* SceneLocationViewEstimateDelegate.swift in Sources */,
 				E1060843238048130032F922 /* LocationAnnotationNode.swift in Sources */,
 				E1060847238048130032F922 /* SceneLocationManager.swift in Sources */,
-				E10607F9238047BE0032F922 /* ViewController.swift in Sources */,
 				E106083F238048130032F922 /* AttributedType.swift in Sources */,
 				E1060840238048130032F922 /* ScalingScheme.swift in Sources */,
 				E1060844238048130032F922 /* SceneLocationView+ARSCNViewDelegate.swift in Sources */,
@@ -371,14 +363,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E10607FA238047BE0032F922 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E10607FB238047BE0032F922 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E10607FF238047BE0032F922 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

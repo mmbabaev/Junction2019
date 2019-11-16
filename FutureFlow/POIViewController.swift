@@ -125,11 +125,6 @@ extension POIViewController {
                     self.sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: node)
                 }
                 
-                
-//                let oldNode = self?.sceneLocationView.locationNodes.first
-//                self?.sceneLocationView.locationNodes.remove(at: 0)
-//                oldNode?.removeFromParentNode()
-                
             }
         }
     }

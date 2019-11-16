@@ -55,7 +55,13 @@ class SettingsViewController: UIViewController {
 
         addressText.delegate = self
         
-        
+        loadLocations()
+    }
+    
+    func loadLocations() {
+        LocationService.shared.updateLocations { locations in
+            print(locations?.count)
+        }
     }
     
     @IBAction func tappedOpenARButton2(_ sender: Any) {

@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_ARKit_CoreLocation_ARCLTestsVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_ARKit_CoreLocation_ARCLTestsVersionString[];
+FOUNDATION_EXPORT double Pods_Node_Demos_Node_DemosUITestsVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_Node_Demos_Node_DemosUITestsVersionString[];
 

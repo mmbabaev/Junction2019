@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double ARCLVersionNumber;
-FOUNDATION_EXPORT const unsigned char ARCLVersionString[];
+FOUNDATION_EXPORT double Pods_Node_DemosVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_Node_DemosVersionString[];
 

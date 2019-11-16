@@ -6,7 +6,6 @@
 //  Copyright © 2017 Project Dent. All rights reserved.
 //
 
-import ARCL
 import ARKit
 import MapKit
 import SceneKit

@@ -1,29 +1,27 @@
-source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '11.0'
-use_frameworks!
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
 
 target 'ARKit+CoreLocation' do
-    pod 'ARCL', :path => '.'
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
 
-    target 'ARCLTests' do
+  # Pods for ARKit+CoreLocation
 
-    end
 end
-
 
 target 'Node Demos' do
-    pod 'ARCL', :path => '.'
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
 
-    target 'Node DemosTests' do
+  # Pods for Node Demos
 
-    end
-end
+  target 'Node DemosTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
 
+  target 'Node DemosUITests' do
+    # Pods for testing
+  end
 
-post_install do |installer|
-    installer.pods_project.targets.each do |target|
-        target.build_configurations.each do |config|
-            config.build_settings['ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES'] = 'YES'
-        end
-    end
 end

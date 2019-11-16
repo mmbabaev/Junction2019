@@ -14,35 +14,16 @@ import UIKit
 @available(iOS 11.0, *)
 /// Displays Points of Interest in ARCL
 class POIViewController: UIViewController {
-    @IBOutlet var mapView: MKMapView!
     @IBOutlet var infoLabel: UILabel!
     @IBOutlet weak var nodePositionLabel: UILabel!
 
     @IBOutlet var contentView: UIView!
     let sceneLocationView = SceneLocationView()
 
-    var userAnnotation: MKPointAnnotation?
-    var locationEstimateAnnotation: MKPointAnnotation?
-
     var updateUserLocationTimer: Timer?
     var updateInfoLabelTimer: Timer?
     var updateLocationsTimer: Timer?
-
-    var centerMapOnUserLocation: Bool = true
-    var routes: [MKRoute]?
     
-    var currentNames = [String]()
-    
-    var temp: Double = 0
-
-    var showMap = false {
-        didSet {
-            guard let mapView = mapView else {
-                return
-            }
-            mapView.isHidden = !showMap
-        }
-    }
 
     /// Whether to display some debugging data
     /// This currently displays the coordinate of the best location estimate
@@ -79,33 +60,14 @@ class POIViewController: UIViewController {
                                                     userInfo: nil,
                                                     repeats: true)
 
-        // Set to true to display an arrow which points north.
-        // Checkout the comments in the property description and on the readme on this.
-//        sceneLocationView.orientToTrueNorth = false
-//        sceneLocationView.locationEstimateMethod = .coreLocationDataOnly
-
         sceneLocationView.showAxesNode = true
         sceneLocationView.showFeaturePoints = displayDebugging
         sceneLocationView.locationNodeTouchDelegate = self
-//        sceneLocationView.delegate = self // Causes an assertionFailure - use the `arViewDelegate` instead:
         sceneLocationView.arViewDelegate = self
         sceneLocationView.locationNodeTouchDelegate = self
 
         contentView.addSubview(sceneLocationView)
         sceneLocationView.frame = contentView.bounds
-
-        mapView.isHidden = !showMap
-
-        if showMap {
-            updateUserLocationTimer = Timer.scheduledTimer(
-                timeInterval: 0.5,
-                target: self,
-                selector: #selector(POIViewController.updateUserLocation),
-                userInfo: nil,
-                repeats: true)
-
-            routes?.forEach { mapView.addOverlay($0.polyline) }
-        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -133,68 +95,6 @@ class POIViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         sceneLocationView.frame = contentView.bounds
-    }
-
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        guard let touch = touches.first,
-            let view = touch.view else { return }
-
-        if mapView == view || mapView.recursiveSubviews().contains(view) {
-            centerMapOnUserLocation = false
-        } else {
-            let location = touch.location(in: self.view)
-
-            if location.x <= 40 && adjustNorthByTappingSidesOfScreen {
-                print("left side of the screen")
-                sceneLocationView.moveSceneHeadingAntiClockwise()
-            } else if location.x >= view.frame.size.width - 40 && adjustNorthByTappingSidesOfScreen {
-                print("right side of the screen")
-                sceneLocationView.moveSceneHeadingClockwise()
-            } else {
-                let image = UIImage(named: "pin")!
-                let annotationNode = LocationAnnotationNode(location: nil, image: image)
-                annotationNode.scaleRelativeToDistance = false
-                annotationNode.scalingScheme = .normal
-                DispatchQueue.main.async {
-                    // If we're using the touch delegate, adding a new node in the touch handler sometimes causes a freeze.
-                    // So defer to next pass.
-                    self.sceneLocationView.addLocationNodeForCurrentPosition(locationNode: annotationNode)
-                }
-            }
-        }
-    }
-}
-
-// MARK: - MKMapViewDelegate
-
-@available(iOS 11.0, *)
-extension POIViewController: MKMapViewDelegate {
-
-    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        let renderer = MKPolylineRenderer(overlay: overlay)
-        renderer.lineWidth = 3
-        renderer.strokeColor = UIColor.blue.withAlphaComponent(0.5)
-
-        return renderer
-    }
-
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        guard !(annotation is MKUserLocation),
-           let pointAnnotation = annotation as? MKPointAnnotation else { return nil }
-
-        let marker = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: nil)
-
-        if pointAnnotation == self.userAnnotation {
-            marker.displayPriority = .required
-            marker.glyphImage = UIImage(named: "user")
-        } else {
-            marker.displayPriority = .required
-            marker.markerTintColor = UIColor(hue: 0.267, saturation: 0.67, brightness: 0.77, alpha: 1.0)
-            marker.glyphImage = UIImage(named: "compass")
-        }
-
-        return marker
     }
 }
 
@@ -244,92 +144,6 @@ extension POIViewController {
         return node
     }
 
-    /// Builds the location annotations for a few random objects, scattered across the country
-    ///
-    /// - Returns: an array of annotation nodes.
-    func buildDemoData() -> [LocationAnnotationNode] {
-        var nodes: [LocationAnnotationNode] = []
-
-//        let spaceNeedle = buildNode(latitude: 60.185400, longitude: 24.824797, altitude: 225, imageName: "pin")
-//        nodes.append(spaceNeedle)
-//
-        let spaceNeedle1 = buildNode(latitude: 60.185162, longitude: 24.825310, altitude: 15, imageName: "box5")
-        spaceNeedle1.scaleRelativeToDistance = true
-        spaceNeedle1.scalingScheme = .normal
-        nodes.append(spaceNeedle1)
-        //
-        let spaceNeedle = buildNode(latitude: 60.185739, longitude: 24.824169, altitude: 15, imageName: "pin")
-        spaceNeedle.scaleRelativeToDistance = true
-        spaceNeedle.scalingScheme = .normal
-        nodes.append(spaceNeedle)
-        let spaceNeedleLeft = buildNode(latitude: 60.185392, longitude: 24.824488, altitude: 15, imageName: "box1")
-        spaceNeedleLeft.scaleRelativeToDistance = true
-        spaceNeedleLeft.scalingScheme = .normal
-        nodes.append(spaceNeedleLeft)
-        let spaceNeedleRight = buildNode(latitude: 60.185611, longitude: 24.824917, altitude: 13, imageName: "box4")
-        spaceNeedleRight.scaleRelativeToDistance = true
-        spaceNeedleRight.scalingScheme = .normal
-        nodes.append(spaceNeedleRight)
-        //
-//        let empireStateBuilding = buildNode(latitude: 40.7484, longitude: -73.9857, altitude: 14.3, imageName: "pin")
-//        nodes.append(empireStateBuilding)
-//
-//        let canaryWharf = buildNode(latitude: 51.504607, longitude: -0.019592, altitude: 236, imageName: "pin")
-//        nodes.append(canaryWharf)
-//
-        let applePark = buildViewNode(latitude: 37.334807, longitude: -122.009076, altitude: 100, text: "Apple Park")
-        applePark.scaleRelativeToDistance = true
-        applePark.scalingScheme = .normal
-        nodes.append(applePark)
-
-        return nodes
-    }
-
-    @objc
-    func updateUserLocation() {
-        guard let currentLocation = sceneLocationView.sceneLocationManager.currentLocation else {
-            return
-        }
-
-        DispatchQueue.main.async { [weak self ] in
-            guard let self = self else {
-                return
-            }
-
-            if self.userAnnotation == nil {
-                self.userAnnotation = MKPointAnnotation()
-                self.mapView.addAnnotation(self.userAnnotation!)
-            }
-
-            UIView.animate(withDuration: 0.5, delay: 0, options: .allowUserInteraction, animations: {
-                self.userAnnotation?.coordinate = currentLocation.coordinate
-            }, completion: nil)
-
-            if self.centerMapOnUserLocation {
-                UIView.animate(withDuration: 0.45,
-                               delay: 0,
-                               options: .allowUserInteraction,
-                               animations: {
-                                self.mapView.setCenter(self.userAnnotation!.coordinate, animated: false)
-                }, completion: { _ in
-                    self.mapView.region.span = MKCoordinateSpan(latitudeDelta: 0.0005, longitudeDelta: 0.0005)
-                })
-            }
-
-            if self.displayDebugging {
-                if let bestLocationEstimate = self.sceneLocationView.sceneLocationManager.bestLocationEstimate {
-                    if self.locationEstimateAnnotation == nil {
-                        self.locationEstimateAnnotation = MKPointAnnotation()
-                        self.mapView.addAnnotation(self.locationEstimateAnnotation!)
-                    }
-                    self.locationEstimateAnnotation?.coordinate = bestLocationEstimate.location.coordinate
-                } else if self.locationEstimateAnnotation != nil {
-                    self.mapView.removeAnnotation(self.locationEstimateAnnotation!)
-                    self.locationEstimateAnnotation = nil
-                }
-            }
-        }
-    }
 
     @objc
     func updateInfoLabel() {
@@ -353,14 +167,6 @@ extension POIViewController {
             let nodeCount = "\(sceneLocationView.sceneNode?.childNodes.count.description ?? "n/a") ARKit Nodes"
             infoLabel.text!.append(" \(hour.short):\(minute.short):\(second.short):\(nanosecond.short3) • \(nodeCount)")
         }
-    }
-
-    func buildNode(latitude: CLLocationDegrees, longitude: CLLocationDegrees,
-                   altitude: CLLocationDistance, imageName: String) -> LocationAnnotationNode {
-        let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        let location = CLLocation(coordinate: coordinate, altitude: altitude)
-        let image = UIImage(named: imageName)!
-        return LocationAnnotationNode(location: location, image: image)
     }
 
     func buildViewNode(latitude: CLLocationDegrees, longitude: CLLocationDegrees,

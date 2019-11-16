@@ -28,8 +28,6 @@ class SettingsViewController: UIViewController {
     
     func createARVC() -> POIViewController {
            let arclVC = POIViewController.loadFromStoryboard()
-           arclVC.showMap = false
-
            return arclVC
        }
 }

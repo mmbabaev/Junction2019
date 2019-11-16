@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5317B049060E26A0736C2955 /* Pods_FutureFlow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1366BD0048610B1F504F94B9 /* Pods_FutureFlow.framework */; };
 		E10607F5238047BE0032F922 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10607F4238047BE0032F922 /* AppDelegate.swift */; };
 		E10607F9238047BE0032F922 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10607F8238047BE0032F922 /* ViewController.swift */; };
 		E10607FC238047BE0032F922 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E10607FA238047BE0032F922 /* Main.storyboard */; };
@@ -40,9 +41,13 @@
 		E106086A238049440032F922 /* POIViewController+ARSCNViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1060869238049440032F922 /* POIViewController+ARSCNViewDelegate.swift */; };
 		E106086C238049CD0032F922 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E106086B238049CD0032F922 /* Assets.xcassets */; };
 		E1743A6B23804AAE00192091 /* POIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1743A6A23804AAE00192091 /* POIViewController.swift */; };
+		E1743A6F23804D1F00192091 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1743A6E23804D1F00192091 /* LocationService.swift */; };
+		E1743A7123804D3600192091 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1743A7023804D3600192091 /* Location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1366BD0048610B1F504F94B9 /* Pods_FutureFlow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FutureFlow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B56905540D6379FA0944F60C /* Pods-FutureFlow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FutureFlow.debug.xcconfig"; path = "Target Support Files/Pods-FutureFlow/Pods-FutureFlow.debug.xcconfig"; sourceTree = "<group>"; };
 		E10607F1238047BE0032F922 /* FutureFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FutureFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E10607F4238047BE0032F922 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E10607F8238047BE0032F922 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +83,9 @@
 		E1060869238049440032F922 /* POIViewController+ARSCNViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "POIViewController+ARSCNViewDelegate.swift"; sourceTree = "<group>"; };
 		E106086B238049CD0032F922 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1743A6A23804AAE00192091 /* POIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POIViewController.swift; sourceTree = "<group>"; };
+		E1743A6E23804D1F00192091 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		E1743A7023804D3600192091 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		EE8F0FAD0EAC648BB5C581F5 /* Pods-FutureFlow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FutureFlow.release.xcconfig"; path = "Target Support Files/Pods-FutureFlow/Pods-FutureFlow.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,17 +93,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5317B049060E26A0736C2955 /* Pods_FutureFlow.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1969755195813E4F537AD749 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1366BD0048610B1F504F94B9 /* Pods_FutureFlow.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		57C1355D2E962EDC045D5EAC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B56905540D6379FA0944F60C /* Pods-FutureFlow.debug.xcconfig */,
+				EE8F0FAD0EAC648BB5C581F5 /* Pods-FutureFlow.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E10607E8238047BD0032F922 = {
 			isa = PBXGroup;
 			children = (
 				E10607F3238047BE0032F922 /* FutureFlow */,
 				E10607F2238047BE0032F922 /* Products */,
+				57C1355D2E962EDC045D5EAC /* Pods */,
+				1969755195813E4F537AD749 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,20 +138,16 @@
 		E10607F3238047BE0032F922 /* FutureFlow */ = {
 			isa = PBXGroup;
 			children = (
+				E1743A6C23804CEF00192091 /* Other */,
 				E1060827238048120032F922 /* ARKit-CoreLocation */,
-				E106085E238048E20032F922 /* LocationCell.swift */,
-				E106085F238048E30032F922 /* NotSupportedViewController.swift */,
-				E1060860238048E30032F922 /* OpenARCell.swift */,
 				E1743A6A23804AAE00192091 /* POIViewController.swift */,
-				E1060869238049440032F922 /* POIViewController+ARSCNViewDelegate.swift */,
-				E106085C238048E20032F922 /* SettingsViewController.swift */,
-				E106085D238048E20032F922 /* UIButton+Designable.swift */,
-				E1060859238048E20032F922 /* Utils.swift */,
 				E10608562380489A0032F922 /* Main.storyboard */,
 				E106086B238049CD0032F922 /* Assets.xcassets */,
-				E10607F4238047BE0032F922 /* AppDelegate.swift */,
 				E10607F8238047BE0032F922 /* ViewController.swift */,
 				E10607FA238047BE0032F922 /* Main.storyboard */,
+				E1743A6E23804D1F00192091 /* LocationService.swift */,
+				E1743A7023804D3600192091 /* Location.swift */,
+				E10607F4238047BE0032F922 /* AppDelegate.swift */,
 				E10607FF238047BE0032F922 /* LaunchScreen.storyboard */,
 				E1060802238047BE0032F922 /* Info.plist */,
 			);
@@ -188,6 +212,20 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		E1743A6C23804CEF00192091 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				E106085E238048E20032F922 /* LocationCell.swift */,
+				E106085F238048E30032F922 /* NotSupportedViewController.swift */,
+				E1060860238048E30032F922 /* OpenARCell.swift */,
+				E1060869238049440032F922 /* POIViewController+ARSCNViewDelegate.swift */,
+				E106085C238048E20032F922 /* SettingsViewController.swift */,
+				E106085D238048E20032F922 /* UIButton+Designable.swift */,
+				E1060859238048E20032F922 /* Utils.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -195,9 +233,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E1060805238047BE0032F922 /* Build configuration list for PBXNativeTarget "FutureFlow" */;
 			buildPhases = (
+				D7BDAE030211669E35305A1A /* [CP] Check Pods Manifest.lock */,
 				E10607ED238047BE0032F922 /* Sources */,
 				E10607EE238047BE0032F922 /* Frameworks */,
 				E10607EF238047BE0032F922 /* Resources */,
+				8B2443BC8BFBEA43DD243BB1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -255,6 +295,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8B2443BC8BFBEA43DD243BB1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FutureFlow/Pods-FutureFlow-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FutureFlow/Pods-FutureFlow-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FutureFlow/Pods-FutureFlow-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7BDAE030211669E35305A1A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FutureFlow-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E10607ED238047BE0032F922 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -282,11 +364,13 @@
 				E106084A238048130032F922 /* FloatingPoint+Radians.swift in Sources */,
 				E1060866238048E30032F922 /* LocationCell.swift in Sources */,
 				E1060842238048130032F922 /* PolylineNode.swift in Sources */,
+				E1743A6F23804D1F00192091 /* LocationService.swift in Sources */,
 				E1060848238048130032F922 /* LocationManager.swift in Sources */,
 				E1060849238048130032F922 /* SCNVector3+Extensions.swift in Sources */,
 				E106086A238049440032F922 /* POIViewController+ARSCNViewDelegate.swift in Sources */,
 				E106084E238048130032F922 /* SCNNode+Extensions.swift in Sources */,
 				E106084F238048130032F922 /* ARKit_CoreLocation.swift in Sources */,
+				E1743A7123804D3600192091 /* Location.swift in Sources */,
 				E1060861238048E30032F922 /* Utils.swift in Sources */,
 				E1060864238048E30032F922 /* SettingsViewController.swift in Sources */,
 			);
@@ -430,6 +514,7 @@
 		};
 		E1060806238047BE0032F922 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B56905540D6379FA0944F60C /* Pods-FutureFlow.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -448,6 +533,7 @@
 		};
 		E1060807238047BE0032F922 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE8F0FAD0EAC648BB5C581F5 /* Pods-FutureFlow.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -73,7 +73,7 @@ class POIViewController: UIViewController {
                                                     userInfo: nil,
                                                     repeats: true)
         
-        updateLocationsTimer = Timer.scheduledTimer(timeInterval: 1.0,
+        updateLocationsTimer = Timer.scheduledTimer(timeInterval: 0.1,
                                                     target: self,
                                                     selector: #selector(POIViewController.updateLocations),
                                                     userInfo: nil,
@@ -235,11 +235,12 @@ extension POIViewController {
     }
     
     func buildNode(from location: Location) -> LocationNode {
-        let image = UIImage(named: "box4")!
+        let number = (abs(location.id.hashValue) % 14) + 1
+        let image = UIImage(named: "Person \(number)")!
         let node = LocationAnnotationNode(location: location.cllocation, image: image)
         node.scaleRelativeToDistance = true
-        node.name = location.name
-        node.tag = location.name
+        node.name = location.id
+        node.tag = location.id
         return node
     }
 

@@ -12,7 +12,7 @@ final class LocationService {
     
     static let shared = LocationService()
     
-    let baseURL = "https://api.fmeter.ru/site/api/1234563213131231231123341112"
+    let baseURL = "http://35.228.127.160"
     let decoder = JSONDecoder()
     
     var locations: [Location] = []
@@ -20,7 +20,7 @@ final class LocationService {
     private init() {}
     
     func updateLocations(_ callback: @escaping ([Location]?) -> Void) {
-        let urlString = baseURL + ""
+        let urlString = baseURL + "/predict_around?x=228&y=100500"
         guard let url = URL(string: urlString) else {
             callback(nil)
             return
@@ -28,12 +28,18 @@ final class LocationService {
         
         Alamofire.request(url, method: .get).responseData { [weak self] result in
             if let data = result.data {
-                let locations = try? self?.decoder.decode([Location].self, from: data)
+                var locations = try? self?.decoder.decode([Location].self, from: data)
+                
+                locations?.remove(at: 4)
+                
                 self?.locations = locations ?? []
+                
                 callback(locations)
             } else {
                 callback(nil)
             }
         }
     }
+    
+    
 }

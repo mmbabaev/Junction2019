@@ -18,11 +18,15 @@ enum Floor: Int, Codable {
 struct Location: Codable {
     
     let lat: Double
-    let long: Double
+    let lon: Double
     let floor: Floor
     
+    var name: String {
+        return "\(lat)-\(lon)-\(floor)"
+    }
+    
     var cllocation: CLLocation {
-        let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
+        let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lon)
         return CLLocation(coordinate: coordinate, altitude: altitude)
     }
     

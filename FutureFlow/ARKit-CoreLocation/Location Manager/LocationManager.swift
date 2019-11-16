@@ -51,7 +51,6 @@ public class LocationManager: NSObject {
         self.locationManager!.startUpdatingLocation()
 
         self.locationManager!.requestWhenInUseAuthorization()
-        print("123 \(self.locationManager!.location)")
         self.currentLocation = self.locationManager!.location
     }
 

@@ -26,9 +26,14 @@ class POIViewController: UIViewController {
 
     var updateUserLocationTimer: Timer?
     var updateInfoLabelTimer: Timer?
+    var updateLocationsTimer: Timer?
 
     var centerMapOnUserLocation: Bool = true
     var routes: [MKRoute]?
+    
+    var currentNames = [String]()
+    
+    var temp: Double = 0
 
     var showMap = false {
         didSet {
@@ -67,6 +72,12 @@ class POIViewController: UIViewController {
                                                     selector: #selector(POIViewController.updateInfoLabel),
                                                     userInfo: nil,
                                                     repeats: true)
+        
+        updateLocationsTimer = Timer.scheduledTimer(timeInterval: 1.0,
+                                                    target: self,
+                                                    selector: #selector(POIViewController.updateLocations),
+                                                    userInfo: nil,
+                                                    repeats: true)
 
         // Set to true to display an arrow which points north.
         // Checkout the comments in the property description and on the readme on this.
@@ -79,9 +90,6 @@ class POIViewController: UIViewController {
 //        sceneLocationView.delegate = self // Causes an assertionFailure - use the `arViewDelegate` instead:
         sceneLocationView.arViewDelegate = self
         sceneLocationView.locationNodeTouchDelegate = self
-
-        // Now add the route or location annotations as appropriate
-        addSceneModels()
 
         contentView.addSubview(sceneLocationView)
         sceneLocationView.frame = contentView.bounds
@@ -194,49 +202,45 @@ extension POIViewController: MKMapViewDelegate {
 
 @available(iOS 11.0, *)
 extension POIViewController {
-
-    /// Adds the appropriate ARKit models to the scene.  Note: that this won't
-    /// do anything until the scene has a `currentLocation`.  It "polls" on that
-    /// and when a location is finally discovered, the models are added.
-    func addSceneModels() {
-        // 1. Don't try to add the models to the scene until we have a current location
-        guard sceneLocationView.sceneLocationManager.currentLocation != nil else {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
-                self?.addSceneModels()
-            }
-            return
-        }
-
-        let box = SCNBox(width: 1, height: 0.2, length: 5, chamferRadius: 0.25)
-        box.firstMaterial?.diffuse.contents = UIColor.gray.withAlphaComponent(0.5)
-
-        // 2. If there is a route, show that
-        if let routes = routes {
-            sceneLocationView.addRoutes(routes: routes) { distance -> SCNBox in
-                let box = SCNBox(width: 1.75, height: 0.5, length: distance, chamferRadius: 0.25)
-
-//                // Option 1: An absolutely terrible box material set (that demonstrates what you can do):
-//                box.materials = ["box0", "box1", "box2", "box3", "box4", "box5"].map {
-//                    let material = SCNMaterial()
-//                    material.diffuse.contents = UIImage(named: $0)
-//                    return material
-//                }
-
-                // Option 2: Something more typical
-                box.firstMaterial?.diffuse.contents = UIColor.blue.withAlphaComponent(0.7)
-                return box
-            }
-        } else {
-            // 3. If not, then show the
-            buildDemoData().forEach {
-                sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: $0)
+    
+    
+    
+    @objc
+    func updateLocations() {
+        
+        LocationService.shared.updateLocations { [unowned self] result in
+            let locations = result ?? []
+            let nodes = locations.compactMap { self.buildNode(from: $0) }
+            
+            for node in nodes {
+        
+                if let oldNode = self.sceneLocationView.findNodes(tagged: node.tag!).first {
+                    let newLocation = node.location
+                    let test = CLLocation(coordinate: newLocation!.coordinate, altitude: newLocation!.altitude)
+                    oldNode.updatePositionAndScale(setup: true,
+                                                   scenePosition: self.sceneLocationView.scenePosition, locationNodeLocation: test,
+                                                   locationManager: self.sceneLocationView.sceneLocationManager,
+                                                   onCompletion: {})
+                } else {
+                    self.sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: node)
+                }
+                
+                
+//                let oldNode = self?.sceneLocationView.locationNodes.first
+//                self?.sceneLocationView.locationNodes.remove(at: 0)
+//                oldNode?.removeFromParentNode()
+                
             }
         }
-
-        // There are many different ways to add lighting to a scene, but even this mechanism (the absolute simplest)
-        // keeps 3D objects fron looking flat
-        sceneLocationView.autoenablesDefaultLighting = true
-
+    }
+    
+    func buildNode(from location: Location) -> LocationNode {
+        let image = UIImage(named: "box4")!
+        let node = LocationAnnotationNode(location: location.cllocation, image: image)
+        node.scaleRelativeToDistance = true
+        node.name = location.name
+        node.tag = location.name
+        return node
     }
 
     /// Builds the location annotations for a few random objects, scattered across the country

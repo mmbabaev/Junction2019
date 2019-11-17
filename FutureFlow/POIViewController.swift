@@ -56,7 +56,7 @@ class POIViewController: UIViewController {
                                                     userInfo: nil,
                                                     repeats: true)
         
-        updateLocationsTimer = Timer.scheduledTimer(timeInterval: 1.0,
+        updateLocationsTimer = Timer.scheduledTimer(timeInterval: 0.5,
                                                     target: self,
                                                     selector: #selector(POIViewController.updateLocations),
                                                     userInfo: nil,
@@ -116,28 +116,35 @@ extension POIViewController {
             
             self.sceneLocationView.removeAllNodes()
             self.sceneLocationView.addLocationNodesWithConfirmedLocation(locationNodes: nodes)
-            
-//            let newTags = nodes.compactMap { $0.tag }
-//            for node in self.sceneLocationView.locationNodes {
-//                if !newTags.contains(node.tag!) {
-//                    self.sceneLocationView.removeLocationNode(locationNode: node)
-//                }
-//            }
-//
-//            for node in nodes {
-//
-//                if let oldNode = self.sceneLocationView.findNodes(tagged: node.tag!).first {
-//                    let newLocation = node.location
-//                    let test = CLLocation(coordinate: newLocation!.coordinate, altitude: altitude)
-//                    oldNode.updatePositionAndScale(setup: true,
-//                                                   scenePosition: self.sceneLocationView.scenePosition, locationNodeLocation: newLocation,
-//                                                   locationManager: self.sceneLocationView.sceneLocationManager,
-//                                                   onCompletion: {})
-//                } else {
-//                    self.sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: node)
-//                }
-//
-//            }
+        }
+    }
+    
+    @objc
+    func updateLocationsClever() {
+        LocationService.shared.updateLocations { [unowned self] result in
+            let locations = result ?? []
+            let nodes = locations.compactMap { self.buildNode(from: $0) }
+           
+            let newTags = nodes.compactMap { $0.tag }
+            for node in self.sceneLocationView.locationNodes {
+                if !newTags.contains(node.tag!) {
+                    self.sceneLocationView.removeLocationNode(locationNode: node)
+                }
+            }
+
+            for node in nodes {
+
+                if let oldNode = self.sceneLocationView.findNodes(tagged: node.tag!).first {
+                    let newLocation = node.location!
+                    oldNode.updatePositionAndScale(setup: true,
+                                                   scenePosition: self.sceneLocationView.scenePosition, locationNodeLocation: newLocation,
+                                                   locationManager: self.sceneLocationView.sceneLocationManager,
+                                                   onCompletion: {})
+                } else {
+                    self.sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: node)
+                }
+
+            }
         }
     }
     

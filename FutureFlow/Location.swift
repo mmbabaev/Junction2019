@@ -12,7 +12,8 @@ enum Floor: Int, Codable {
     case
     zero = 0,
     first,
-    second
+    second,
+    third
 }
 
 struct Location: Codable {
@@ -32,9 +33,11 @@ struct Location: Codable {
         case .zero:
             return -5
         case .first:
-            return 13
+            return 40
         case .second:
-            return 30
+            return 70
+        case .third:
+            return 100
         }
     }
 }

@@ -20,6 +20,7 @@ final class LocationService {
     private init() {}
     
     func updateLocations(_ callback: @escaping ([Location]?) -> Void) {
+        //let urlString = baseURL + "/predict?x=1&y=1&lb=50&ub=100"
         let urlString = baseURL + "/predict_around?x=228&y=100500"
         //let urlString = baseURL + "/linear"
         guard let url = URL(string: urlString) else {
@@ -31,7 +32,7 @@ final class LocationService {
             if let data = result.data {
                 var locations = try? self?.decoder.decode([Location].self, from: data)
                 
-                locations?.remove(at: 4)
+                //locations?.remove(at: 4)
                 
                 self?.locations = locations ?? []
                 

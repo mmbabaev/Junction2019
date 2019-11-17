@@ -112,20 +112,30 @@ extension POIViewController {
             let locations = result ?? []
             let nodes = locations.compactMap { self.buildNode(from: $0) }
             
-            for node in nodes {
-        
-                if let oldNode = self.sceneLocationView.findNodes(tagged: node.tag!).first {
-                    let newLocation = node.location
-                    let test = CLLocation(coordinate: newLocation!.coordinate, altitude: newLocation!.altitude)
-                    oldNode.updatePositionAndScale(setup: true,
-                                                   scenePosition: self.sceneLocationView.scenePosition, locationNodeLocation: test,
-                                                   locationManager: self.sceneLocationView.sceneLocationManager,
-                                                   onCompletion: {})
-                } else {
-                    self.sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: node)
-                }
-                
-            }
+            self.sceneLocationView.removeAllNodes()
+            self.sceneLocationView.addLocationNodesWithConfirmedLocation(locationNodes: nodes)
+            
+//            let newTags = nodes.compactMap { $0.tag }
+//            for node in self.sceneLocationView.locationNodes {
+//                if !newTags.contains(node.tag!) {
+//                    self.sceneLocationView.removeLocationNode(locationNode: node)
+//                }
+//            }
+//
+//            for node in nodes {
+//
+//                if let oldNode = self.sceneLocationView.findNodes(tagged: node.tag!).first {
+//                    let newLocation = node.location
+//                    let test = CLLocation(coordinate: newLocation!.coordinate, altitude: newLocation!.altitude)
+//                    oldNode.updatePositionAndScale(setup: true,
+//                                                   scenePosition: self.sceneLocationView.scenePosition, locationNodeLocation: test,
+//                                                   locationManager: self.sceneLocationView.sceneLocationManager,
+//                                                   onCompletion: {})
+//                } else {
+//                    self.sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: node)
+//                }
+//
+//            }
         }
     }
     

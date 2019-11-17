@@ -69,7 +69,7 @@ public final class SceneLocationManager {
 //        return bestEstimate.translatedLocation(to: position)
         
         let coordinate = CLLocationCoordinate2D(latitude: 60.185469, longitude: 24.824695)
-        return CLLocation(coordinate: coordinate, altitude: 50, horizontalAccuracy: 1, verticalAccuracy: 1, timestamp: Date())
+        return CLLocation(coordinate: coordinate, altitude: 14.512657821178436, horizontalAccuracy: 1, verticalAccuracy: 1, timestamp: Date())
     }
 
     init() {

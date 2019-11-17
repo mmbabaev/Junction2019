@@ -20,8 +20,8 @@ final class LocationService {
     private init() {}
     
     func updateLocations(_ callback: @escaping ([Location]?) -> Void) {
-        //let urlString = baseURL + "/predict?x=1&y=1&lb=50&ub=100"
-        let urlString = baseURL + "/predict_around?x=228&y=100500"
+        let urlString = baseURL + "/predict?lat=60.185469&lon=24.824695&lb=1&ub=50"
+        //let urlString = baseURL + "/predict_around?x=228&y=100500"
         //let urlString = baseURL + "/linear"
         guard let url = URL(string: urlString) else {
             callback(nil)

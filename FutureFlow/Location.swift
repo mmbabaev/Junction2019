@@ -33,11 +33,11 @@ struct Location: Codable {
         case .zero:
             return -5
         case .first:
-            return 40
+            return 12
         case .second:
-            return 70
+            return 30
         case .third:
-            return 100
+            return 45
         }
     }
 }

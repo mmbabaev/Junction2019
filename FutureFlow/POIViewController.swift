@@ -112,36 +112,38 @@ extension POIViewController {
             let locations = result ?? []
             let nodes = locations.compactMap { self.buildNode(from: $0) }
             
-            self.sceneLocationView.removeAllNodes()
-            self.sceneLocationView.addLocationNodesWithConfirmedLocation(locationNodes: nodes)
+//            self.sceneLocationView.removeAllNodes()
+//            self.sceneLocationView.addLocationNodesWithConfirmedLocation(locationNodes: nodes)
             
-//            let newTags = nodes.compactMap { $0.tag }
-//            for node in self.sceneLocationView.locationNodes {
-//                if !newTags.contains(node.tag!) {
-//                    self.sceneLocationView.removeLocationNode(locationNode: node)
-//                }
-//            }
-//
-//            for node in nodes {
-//
-//                if let oldNode = self.sceneLocationView.findNodes(tagged: node.tag!).first {
-//                    let newLocation = node.location
-//                    let test = CLLocation(coordinate: newLocation!.coordinate, altitude: newLocation!.altitude)
-//                    oldNode.updatePositionAndScale(setup: true,
-//                                                   scenePosition: self.sceneLocationView.scenePosition, locationNodeLocation: test,
-//                                                   locationManager: self.sceneLocationView.sceneLocationManager,
-//                                                   onCompletion: {})
-//                } else {
-//                    self.sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: node)
-//                }
-//
-//            }
+            let newTags = nodes.compactMap { $0.tag }
+            for node in self.sceneLocationView.locationNodes {
+                if !newTags.contains(node.tag!) {
+                    self.sceneLocationView.removeLocationNode(locationNode: node)
+                }
+            }
+
+            for node in nodes {
+
+                if let oldNode = self.sceneLocationView.findNodes(tagged: node.tag!).first {
+                    let newLocation = node.location
+                    let test = CLLocation(coordinate: newLocation!.coordinate, altitude: newLocation!.altitude)
+                    oldNode.updatePositionAndScale(setup: true,
+                                                   scenePosition: self.sceneLocationView.scenePosition, locationNodeLocation: test,
+                                                   locationManager: self.sceneLocationView.sceneLocationManager,
+                                                   onCompletion: {})
+                } else {
+                    self.sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: node)
+                }
+
+            }
         }
     }
     
     func buildNode(from location: Location) -> LocationNode {
         let number = (abs(location.id.hashValue) % 14) + 1
+        //let number = 1
         let image = UIImage(named: "Person \(number)")!
+        
         let node = LocationAnnotationNode(location: location.cllocation, image: image)
         node.scaleRelativeToDistance = true
         node.name = location.id

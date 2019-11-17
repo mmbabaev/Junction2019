@@ -11,6 +11,8 @@ import MapKit
 import SceneKit
 import UIKit
 
+var selectedTag = ""
+
 @available(iOS 11.0, *)
 /// Displays Points of Interest in ARCL
 class POIViewController: UIViewController {
@@ -54,7 +56,7 @@ class POIViewController: UIViewController {
                                                     userInfo: nil,
                                                     repeats: true)
         
-        updateLocationsTimer = Timer.scheduledTimer(timeInterval: 0.1,
+        updateLocationsTimer = Timer.scheduledTimer(timeInterval: 1.0,
                                                     target: self,
                                                     selector: #selector(POIViewController.updateLocations),
                                                     userInfo: nil,
@@ -112,30 +114,30 @@ extension POIViewController {
             let locations = result ?? []
             let nodes = locations.compactMap { self.buildNode(from: $0) }
             
-//            self.sceneLocationView.removeAllNodes()
-//            self.sceneLocationView.addLocationNodesWithConfirmedLocation(locationNodes: nodes)
+            self.sceneLocationView.removeAllNodes()
+            self.sceneLocationView.addLocationNodesWithConfirmedLocation(locationNodes: nodes)
             
-            let newTags = nodes.compactMap { $0.tag }
-            for node in self.sceneLocationView.locationNodes {
-                if !newTags.contains(node.tag!) {
-                    self.sceneLocationView.removeLocationNode(locationNode: node)
-                }
-            }
-
-            for node in nodes {
-
-                if let oldNode = self.sceneLocationView.findNodes(tagged: node.tag!).first {
-                    let newLocation = node.location
-                    let test = CLLocation(coordinate: newLocation!.coordinate, altitude: newLocation!.altitude)
-                    oldNode.updatePositionAndScale(setup: true,
-                                                   scenePosition: self.sceneLocationView.scenePosition, locationNodeLocation: test,
-                                                   locationManager: self.sceneLocationView.sceneLocationManager,
-                                                   onCompletion: {})
-                } else {
-                    self.sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: node)
-                }
-
-            }
+//            let newTags = nodes.compactMap { $0.tag }
+//            for node in self.sceneLocationView.locationNodes {
+//                if !newTags.contains(node.tag!) {
+//                    self.sceneLocationView.removeLocationNode(locationNode: node)
+//                }
+//            }
+//
+//            for node in nodes {
+//
+//                if let oldNode = self.sceneLocationView.findNodes(tagged: node.tag!).first {
+//                    let newLocation = node.location
+//                    let test = CLLocation(coordinate: newLocation!.coordinate, altitude: altitude)
+//                    oldNode.updatePositionAndScale(setup: true,
+//                                                   scenePosition: self.sceneLocationView.scenePosition, locationNodeLocation: newLocation,
+//                                                   locationManager: self.sceneLocationView.sceneLocationManager,
+//                                                   onCompletion: {})
+//                } else {
+//                    self.sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: node)
+//                }
+//
+//            }
         }
     }
     
@@ -194,6 +196,8 @@ extension POIViewController: LNTouchDelegate {
 
     func annotationNodeTouched(node: AnnotationNode) {
         print("AnnotationNode touched \(node)")
+        selectedTag = (node.parent as? LocationAnnotationNode)?.tag ?? ""
+        print(selectedTag)
     }
 
     func locationNodeTouched(node: LocationNode) {
